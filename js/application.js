@@ -23,8 +23,31 @@ var updatePrices = function() {
 $(document).ready(function () {
   updatePrices();
 
-  $('.btn.remove').on('click', function(event) {
+  $(document).on('click', '.btn.remove', function (event) {
     $(this).closest('tr').remove();
+    updatePrices();
+  });
+
+  var timeout;
+  $(document).on('input', 'tr .quantity', function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      updatePrices();
+    }, 500);
+  });
+
+  $('#addItem').on('submit', function (event) {
+    event.preventDefault();
+    var itemName = $(this).children('.itemName').val();
+    var itemPrice = $(this).children('.itemPrice').val();
+
+    $('tbody').append('<tr>'+
+    '<td class="name">' + itemName + '</td>' +
+    '<td class = "price">' + itemPrice + '</td>' + 
+    '<td class = "quantity"><input type="number" value="1" /></td>' + 
+    '<td class = "subtotal"></td>' + 
+    '<td><button class="btn btn-light btn-sm remove">remove</button></td>')
+
     updatePrices();
   });
 

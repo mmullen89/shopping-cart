@@ -31,16 +31,16 @@
             </thead>
             <tbody>
               <tr>
-                <td>Salmon</td>
-                <td class = "price">45.00</td>
-                <td class = "quantity"><input type="number" value="20" /></td>
+                <td class="name">Salmon</td>
+                <td class = "price">16.00</td>
+                <td class = "quantity"><input type="number" value="3" /></td>
                 <td class = "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
               <tr>
-                <td>Pork</td>
-                <td class = "price">45.00</td>
-                <td class = "quantity"><input type="number" value="20" /></td>
+                <td class="name">Pork</td>
+                <td class = "price">10.00</td>
+                <td class = "quantity"><input type="number" value="2" /></td>
                 <td class = "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
@@ -48,7 +48,12 @@
           </table>
         </div>
         <div class = "col-12 col-md-6">
-          <h3>Total: $ <span id="totalValue"></span></h3>
+          <h3>Total: $<span id="totalValue"></span></h3>
+        </div>
+        <form class = "col" id="addItem">
+          <input class="itemName" type="text" placeholder="Apple" required />
+          <input class="itemPrice" type="number" value = "0" />
+          <button class="btn btn-primary btn-sm">add</button>
         </div>
 
       </div>
