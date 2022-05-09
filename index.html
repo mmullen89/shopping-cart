@@ -10,36 +10,39 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/application.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    <h1 class = "page-title">Shopping Cart</h1>
+    
     <div class = "container">
       <div class = "row">
         <div class = "col-12">
-          <table class="table table-responsive table-hover">
+          <h1 class = "page-title">Shopping Cart</h1>
+          <table class="table table-responsive table-hover table-bordered">
             <thead>
               <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Subtotal</th>
-                <th scope="col"></th>
+                <th class="column-header" scope="col">Item</th>
+                <th class="column-header" scope="col">Price ($)</th>
+                <th class="column-header" scope="col">Quantity</th>
+                <th class="column-header" scope="col">Subtotal ($)</th>
+                <th class="column-header" scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="name">Salmon</td>
-                <td class = "price">16.00</td>
+                <td class = "price">$16.00</td>
                 <td class = "quantity"><input type="number" value="3" /></td>
                 <td class = "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
               </tr>
               <tr>
                 <td class="name">Pork</td>
-                <td class = "price">10.00</td>
+                <td class = "price">$10.00</td>
                 <td class = "quantity"><input type="number" value="2" /></td>
                 <td class = "subtotal"></td>
                 <td><button class="btn btn-light btn-sm remove">remove</button></td>
@@ -47,14 +50,15 @@
             </tbody>
           </table>
         </div>
-        <div class = "col-12 col-md-6">
-          <h3>Total: $<span id="totalValue"></span></h3>
+        <div class = "col-12">
+          <form class = "col col-md-8" id="addItem">
+            <input class="itemName" type="text" placeholder="Apple" required />
+            <input class="itemPrice" type="number" value = "0" step=".01"/>
+            <button class="btn btn-primary btn-sm">Add Item</button>
+          </form>
+          <h3 class="total-value">Total: $<span id="totalValue"></span></h3>
         </div>
-        <form class = "col" id="addItem">
-          <input class="itemName" type="text" placeholder="Apple" required />
-          <input class="itemPrice" type="number" value = "0" />
-          <button class="btn btn-primary btn-sm">add</button>
-        </div>
+        
 
       </div>
     </div>
