@@ -3,6 +3,10 @@ var sum = function (acc, x) { return acc + x; };
 var updateSubtotal = function(element) {
   var quantity = parseInt($(element).find('.quantity input').val());
   var price = parseFloat($(element).find('.price').text().replace(/\$/,""));
+  
+  if (isNaN(quantity)) {
+    quantity = 0;
+  }
 
   var subtotal = Math.round((quantity * price)*100)/100;
   $(element).children('.subtotal').html("$"+subtotal);
